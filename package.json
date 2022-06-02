@@ -1,0 +1,15 @@
+{
+  "name": "commit",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/FE-WROLD-TEAM/commit.git",
+  "author": "zhouhaoyu <67226385+zhouhaoyiu@users.noreply.github.com>",
+  "license": "MIT",
+  "scripts": {
+    "config": "npm link"
+  },
+  "bin": {
+    "pcommit": "bin/commit.ps1",
+    "bcommit": "bin/commit.sh"
+  }
+}
