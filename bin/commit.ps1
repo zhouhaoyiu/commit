@@ -8,12 +8,12 @@ foreach ($i in $args)
   $index=0
   if ($i -eq "-ns")
   {
-    $sign=false
+    $sign="false"
   }
 
   if ($i -eq "-np")
   {
-    $push=false
+    $push="false"
   }
 
   if ($i -eq "-h")
@@ -52,7 +52,7 @@ Write-Host $message
 
 git add .
 Write-Host "git adding..."
-if ($sign -eq $true)
+if ($sign -eq "true")
 {
   Write-Host "your commit will be signed"
   git commit -s -m "$message"
@@ -62,7 +62,7 @@ else
   git commit -m "$message"
 }
 
-if ($push -eq $true)
+if ($push -eq "true")
 {
   Write-Host "your commit will be pushed"
   git push
