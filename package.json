@@ -6,7 +6,7 @@
   "author": "zhouhaoyu <67226385+zhouhaoyiu@users.noreply.github.com>",
   "license": "MIT",
   "scripts": {
-    "config": "npm link"
+    "config": "pnpm link"
   },
   "bin": {
     "pcommit": "bin/commit.ps1",
