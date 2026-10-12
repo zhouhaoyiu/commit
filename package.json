@@ -6,7 +6,8 @@
   "author": "zhouhaoyu <67226385+zhouhaoyiu@users.noreply.github.com>",
   "license": "MIT",
   "scripts": {
-    "config": "pnpm link"
+    "config": "pnpm link",
+    "test": "node --test test/*.test.cjs"
   },
   "bin": {
     "pcommit": "bin/commit.ps1",

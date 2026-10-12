@@ -1,0 +1,29 @@
+name: Shell regression tests
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  test:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: ubuntu-latest
+            powershell: pwsh
+            bash: bash
+          - os: windows-latest
+            powershell: pwsh
+            bash: 'C:\Program Files\Git\bin\bash.exe'
+          - os: windows-latest
+            powershell: powershell
+            bash: 'C:\Program Files\Git\bin\bash.exe'
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm test
+        env:
+          BASH_BIN: ${{ matrix.bash }}
+          POWERSHELL_BIN: ${{ matrix.powershell }}
